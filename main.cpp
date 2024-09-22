@@ -29,10 +29,10 @@ void adicionarProduto(Produto produtos[], int& quantidadeAtual){
     itens[quantidadeAtual].quantidade = quantidadeprod;
 
 //debug
-    cout << "index " << quantidadeAtual << endl;
-    cout << "nome " << itens[quantidadeAtual].nome << endl;
-    cout << "preco " << itens[quantidadeAtual].preco << endl;
-    cout << "quantidade " << itens[quantidadeAtual].quantidade << endl;
+    //cout << "index " << quantidadeAtual << endl;
+    //cout << "nome " << itens[quantidadeAtual].nome << endl;
+    //cout << "preco " << itens[quantidadeAtual].preco << endl;
+    //cout << "quantidade " << itens[quantidadeAtual].quantidade << endl;
 //debug
 
     quantidadedeprodutos = quantidadeAtual + 1;
@@ -116,7 +116,7 @@ int main(){
 
     while(true){
         int escolha;
-        cout << "Escolha\n\n" << "[1] Adicionar produtos \n[2] Exibir produtos \n[3] Calcular e exibir stock \n[0] Eliminar base de dados\n";
+        cout << "\n\n[1] Adicionar produtos \n[2] Exibir produtos \n[3] Calcular e exibir stock \n[0] Eliminar base de dados\n";
             cin >> escolha;
             int quantidadeinicial = 0;
     switch(escolha){
