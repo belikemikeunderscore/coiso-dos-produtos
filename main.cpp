@@ -2,6 +2,8 @@
 
 using namespace std;
 
+int quantidadedeprodutos = 0;
+
 struct Produto {
     string nome; 
     float preco;
@@ -11,17 +13,18 @@ struct Produto {
 Produto itens[] = {};
 
 void adicionarProduto(Produto produtos[], int& quantidadeAtual){
-
-    string nomeprod;
-    float precoprod;
-    int quantidadeprod;
             cout << "Nome: ";
-            cin >> nomeprod;
+                string nomeprod;
+                    cin >> nomeprod;
             cout << "\nPreço: ";
-            cin >> precoprod;
+                float precoprod;
+                    cin >> precoprod;
             cout << "\nQuantidade: ";
-            cin >> quantidadeprod;
+                int quantidadeprod;
+                    cin >> quantidadeprod;
 
+
+    quantidadedeprodutos = quantidadeAtual + 1;
     cout << quantidadeAtual;
 
 }
@@ -39,34 +42,28 @@ float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
 int main(){
 
     while(true){
-    int escolha;
-    cout << "Escolha\n" << endl
-    << "[1] Adicionar produtos \n[2] Exibir produtos \n[3] Calcular e exibir stock \n[0] Sair\n";
-    cin >> escolha;
-    int quantidadeinicial = 0;
+        int escolha;
+        cout << "Escolha\n\n" << "[1] Adicionar produtos \n[2] Exibir produtos \n[3] Calcular e exibir stock \n[0] Sair\n";
+            cin >> escolha;
+            int quantidadeinicial = 0;
     switch(escolha){
-        case 1: 
+            case 1: 
             
-            adicionarProduto(itens, quantidadeinicial);
-            break;
+                adicionarProduto(itens, quantidadedeprodutos);
+                break;
             
-        case 2:
-            int prodescolha;
-            cout << "Introduzir o numero do produto" << endl;
-            cin >> prodescolha;
-            //exibirProdutos();
+            case 2:
+                int prodescolha;
+                cout << "Introduzir o numero do produto" << endl;
+                cin >> prodescolha;
+                //exibirProdutos();
 
-        case 3:
-            //calcularValorTotal();
+            case 3:
+                //calcularValorTotal();
 
-
-
-
-
-
-        case 0:
-            cout << "A sair.." << endl;
-            return 0;
+            case 0:
+                cout << "A sair.." << endl;
+                return 0;
     }
 }
 
