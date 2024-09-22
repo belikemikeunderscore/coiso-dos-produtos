@@ -23,9 +23,24 @@ void adicionarProduto(Produto produtos[], int& quantidadeAtual){
                 int quantidadeprod;
                     cin >> quantidadeprod;
 
+    itens[quantidadeAtual].nome = nomeprod;
+    itens[quantidadeAtual].preco = precoprod;
+    itens[quantidadeAtual].quantidade = quantidadeprod;
+
+//debug
+    cout << quantidadeAtual << endl;
+    cout << itens[quantidadeAtual].nome << endl;
+    cout << itens[quantidadeAtual].preco << endl;
+    cout << itens[quantidadeAtual].quantidade << endl;
+
+//debug
 
     quantidadedeprodutos = quantidadeAtual + 1;
-    cout << quantidadeAtual;
+    if(quantidadeAtual < 2){
+        cout << quantidadeAtual << " Item registrado\n";}
+    else{
+        cout << quantidadeAtual << " Itens registrados\n\n";
+}
 
 }
 
