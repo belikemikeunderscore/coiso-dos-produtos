@@ -53,10 +53,11 @@ void exibirProdutos(const Produto produtos[], int quantidadeAtual){
                 cout << "============================\n";
                 if(quantidadedeprodutos == 0){
                     cout << "Sem produtos registrados.\n";
+                    cout << "============================\n"; 
                 }else if(quantidadedeprodutos >= 1){
                     for(int x = 1; x <= quantidadedeprodutos; ++x ){
                         cout << "> " << itens[x - 1].nome << endl;
-                        cout << "Numero do produto: " << x - 1 << endl << endl;
+                        cout << "Indice do produto: " << x - 1 << endl << endl;
                         cout << "Preço do produto: " << itens[x - 1].preco << endl;
                         cout << "Quantidade em stock: " << itens[x - 1].quantidade << endl;
                         cout << "\n============================\n";
@@ -68,7 +69,7 @@ void exibirProdutos(const Produto produtos[], int quantidadeAtual){
                 break;
             case 2:
                 int produtonumero;
-                cout << "Inserir numero do produto\n";
+                cout << "Inserir indice do produto\n";
                 cin >> produtonumero;
                 cout << "\n\n============================\n";
                 cout << "> " << itens[produtonumero].nome << endl << endl;
@@ -85,7 +86,28 @@ void exibirProdutos(const Produto produtos[], int quantidadeAtual){
 }
 
 float calcularValorTotal(const Produto produtos[], int quantidadeAtual){
+    if(quantidadedeprodutos == 0){
+                        cout << "Parece que não existem produtos para calcular...\n";}
+                        
+    else {
+    cout << "\nCalculando o valor do stock..\n";
+    float valorstock = 0;
+    for(int x = 1; x <= quantidadedeprodutos; ++x ){
+                        cout << "> " << itens[x - 1].nome << endl;
 
+                        cout << "Preço do produto: " << itens[x - 1].preco << endl;
+                        cout << "Quantidade em stock: " << itens[x - 1].quantidade << endl;
+                        cout << "Valor de stock: " << itens[x - 1].preco * itens[x - 1].quantidade << endl;
+                        cout << "\n============================\n";
+                        valorstock = valorstock + (itens[x - 1].preco * itens[x - 1].quantidade);
+                    }
+                    
+
+                            cout << "O valor do stock é de " << valorstock <<"€\n";
+                    }
+
+    
+    return 0;
 }
 
 
@@ -106,10 +128,7 @@ int main(){
                 exibirProdutos(itens, quantidadedeprodutos);
                 break;
             case 3:
-                //calcularValorTotal();
-                break;
-            case 4:
-                cout << quantidadedeprodutos;
+                calcularValorTotal(itens, quantidadedeprodutos);
                 break;
             case 0:
                 cout << "A eliminar..." << endl;
